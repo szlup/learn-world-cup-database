@@ -8,7 +8,7 @@ else
 fi
 
 # Do not change code above this line. Use the PSQL variable above to query your database.
-$($PSQL "CREATE DATABASE gamesDB")
+$($PSQL "CREATE DATABASE worldcuptest")
 
 $($PSQL "CREATE TABLE games (id INTEGER NOT NULL,
     firstname VARCHAR(50),
