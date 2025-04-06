@@ -195,3 +195,4 @@ trap '__vsc_preexec_all "$_"' DEBUG
 __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 ./insert_data.sh test
 git pull
+git pull
