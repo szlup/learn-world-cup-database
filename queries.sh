@@ -34,16 +34,23 @@ from teams
 left join games
 on (teams.team_id = games.winner_id or teams.team_id = games.opponent_id)
 where games.year=2014
-and games.round = 'Eighth-Final'")"
+and games.round = 'Eighth-Final'
+order by teams.name asc")"
 
 echo -e "\nList of unique winning team names in the whole data set:"
 echo "$($PSQL "select distinct (teams.name)
 from games
 left join teams
-on games.winner_id = teams.team_id")"
+on games.winner_id = teams.team_id
+order by teams.name asc")"
 
 echo -e "\nYear and team name of all the champions:"
-echo
+echo "$($PSQL "select games.year, teams.name
+from games
+left join teams
+on games.winner_id = teams.team_id
+where games.round = 'Final'
+order by games.year asc")"
 
 echo -e "\nList of teams that start with 'Co':"
-echo
+echo "$($PSQL "SELECT name from teams where name like 'Co%' order by name asc")"
