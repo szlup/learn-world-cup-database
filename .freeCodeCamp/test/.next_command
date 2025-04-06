@@ -231,3 +231,4 @@ __vsc_original_prompt_command=${PROMPT_COMMAND:-}
 ./queries.sh
 ./queries.sh
 ./queries.sh
+pg_dump -cC --inserts -U freecodecamp worldcup > worldcup.sql
